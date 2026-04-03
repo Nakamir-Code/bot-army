@@ -1,0 +1,26 @@
+{
+  "name": "bot-army",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/proxy.ts",
+    "setup": "bun run setup.ts",
+    "destroy": "bun run destroy.ts",
+    "cli": "bun run src/cli.ts",
+    "test": "bun test tests/unit tests/integration",
+    "test:unit": "bun test tests/unit",
+    "test:integration": "bun test tests/integration",
+    "test:smoke": "bun tests/smoke.ts",
+    "postinstall": "cd src/backends/claude && bun install"
+  },
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "node-pty": "^1.1.0",
+    "tree-kill": "^1.2.2",
+    "yaml": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.10",
+    "typescript": "^6.0.2"
+  }
+}

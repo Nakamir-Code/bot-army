@@ -1,0 +1,115 @@
+# Bot Army Configuration
+# Copy this to config.yaml and fill in your values.
+
+# REQUIRED: Machine-specific name (e.g., "desktop-army", "laptop-army")
+# Used as the channel category prefix: <army_name>-bot-army
+army_name: ""
+
+# Chat platform -- currently only "discord" is supported.
+# platform: "discord"
+
+# Path to the repo you want coding agents to work in
+target_repo: "~/projects/my-repo"
+
+# Where to create git worktrees for each instance
+worktree_base: "~/.bot-army/worktrees"
+
+# User IDs allowed to send commands and messages (platform-specific)
+user_allowlist:
+  - ""
+
+# --- Discord settings (required when platform is "discord") ---
+
+# Server (guild) ID -- right-click your server > Copy Server ID
+guild_id: ""
+
+# Bot token -- see README for setup instructions
+bot_token: ""
+
+# --- Coding agent backends ---
+
+# Default backend: "claude" or "copilot"
+# backend: "claude"
+
+# Default model for all bots (per-bot overrides via /model take priority)
+# default_model: "claude-sonnet-4-6"
+
+# Custom model presets (merged with built-in defaults)
+# model_presets:
+#   - id: "claude-opus-4-6[1m]"
+#     label: "Opus 4.6 (1M context)"
+
+# --- Instance defaults ---
+
+# Default git branch for new instances
+# default_branch: "dev"
+
+# Default permission mode: "default", "acceptEdits", "plan", "bypassPermissions"
+# default_mode: "default"
+
+# Commander channel name
+# commander_name: "commander"
+
+# Auto-spawn on startup -- set to false to disable
+# auto_spawn: false
+
+# --- Optional ---
+
+# Auto-update: poll for new commits and restart
+# auto_update:
+#   interval_seconds: 60
+#   branch: "main"
+
+# Whether to purge channel messages on spawn/kill
+# purge_channels: false
+
+# HTTP CLI API port
+# cli_port: 3100
+
+# --- Channels ---
+# Define your bot channels. Use simple names or detailed config with defaults.
+# Remove or add entries as needed. Run `bun run setup` after changes.
+
+channels:
+  - alpha
+  - bravo
+  - charlie
+  - delta
+  - echo
+  - foxtrot
+  - golf
+  - hotel
+  - india
+  - juliet
+  - kilo
+  - lima
+  - mike
+  - november
+  - oscar
+  - papa
+  - quebec
+  - romeo
+  - sierra
+  - tango
+  - uniform
+  - victor
+  - whiskey
+  - xray
+  - yankee
+  - zulu
+
+# Detailed channel config example (uncomment and modify):
+# channels:
+#   - name: frontend
+#     role: "frontend specialist"
+#     model: "claude-sonnet-4-6"
+#     backend: copilot
+#   - name: backend
+#     role: "backend engineer"
+#   - name: reviewer
+#     role: "code reviewer"
+#     model: "claude-opus-4-6"
+#     backend: claude
+#   - name: infra
+#     repo: "~/projects/infra-repo"
+#   - tester
